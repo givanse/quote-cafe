@@ -1,24 +1,80 @@
+html, body, #root {
+  height: 100%;
+}
+
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
+.App-footer {
   height: 150px;
+  flex-basis: 0;
   padding: 20px;
+
+  background-color: #222;
   color: white;
 }
 
-.App-intro {
-  font-size: large;
+.quote {
+  min-width: 320px;
+  max-width: 600px;
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.quote img {
+  margin: 10px;
+}
+
+.quote_text {
+  line-height: 6rem;
+  -webkit-margin-after: 0;
+}
+
+.quote_author {
+  margin-right: 4rem;
+  -webkit-margin-before: 0;
+}
+
+/* content */
+
+.quote .text::before,
+.quote .text::after {
+  content: '"';
+  font-size: 1.5rem;
+}
+
+.date::after,
+.author::before,
+.author::after {
+  font-size: 1.5rem;
+}
+.author::before {
+  content: '—';
+}
+.author::after {
+  content: ','
+}
+.date::after {
+  content: '.'
+}
+
+/* generic */
+
+.inline {
+  display: inline-block;
+}
+
+.fright {
+  float: right;
+}
+
+.fleft {
+  float: left;
+}
+
+.clearfix {
+  clear: both;
 }
