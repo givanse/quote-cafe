@@ -46,7 +46,7 @@ html, body, #root {
   font-size: 1.5rem;
 }
 
-.date::after,
+.year::after,
 .author::before,
 .author::after {
   font-size: 1.5rem;
@@ -57,7 +57,7 @@ html, body, #root {
 .author::after {
   content: ','
 }
-.date::after {
+.year::after {
   content: '.'
 }
 

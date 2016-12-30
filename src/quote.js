@@ -1,28 +1,38 @@
 import React, {Component} from 'react';
 
+/**
+ * props {
+ *   imgSrc
+ *   text
+ *   author
+ *   year
+ * }
+ */
 class Quote extends Component {
+
   render() {
     return (
       <article className='quote'>
-        <img className='fleft' src="https://placeholdit.imgix.net/~text?txtsize=33&txt=pic&w=100&h=100"/>
+        <img className='fleft' src={this.props.imgSrc}/>
         <p className='quote_text fleft'>
-          lorem ipsum dolor amet sim
+          {this.props.text}
         </p>
 
         <div className='clearfix'></div>
 
         <p className='quote_author fright'>
           <span className='author'>
-            John Doe
+            {this.props.author}
           </span>
-          <span className='date'>
-            1900
+          <span className='year'>
+            {this.props.year}
           </span>
         </p>
 
         <div className='clearfix'></div>
       </article>);
   }
+
 }
 
 export default Quote;
