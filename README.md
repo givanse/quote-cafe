@@ -509,23 +509,6 @@ Please refer to the [dotenv documentation](https://github.com/motdotla/dotenv) f
 >Note: If you are defining environment variables for development, your CI and/or hosting platform will most likely need
 these defined as well. Consult their documentation how to do this. For example, see the documentation for [Travis CI](https://docs.travis-ci.com/user/environment-variables/) or [Heroku](https://devcenter.heroku.com/articles/config-vars).
 
-## Can I Use Decorators?
-
-Many popular libraries use [decorators](https://medium.com/google-developers/exploring-es7-decorators-76ecb65fb841) in their documentation.<br>
-Create React App doesn’t support decorator syntax at the moment because:
-
-* It is an experimental proposal and is subject to change.
-* The current specification version is not officially supported by Babel.
-* If the specification changes, we won’t be able to write a codemod because we don’t use them internally at Facebook.
-
-However in many cases you can rewrite decorator-based code without decorators just as fine.<br>
-Please refer to these two threads for reference:
-
-* [#214](https://github.com/facebookincubator/create-react-app/issues/214)
-* [#411](https://github.com/facebookincubator/create-react-app/issues/411)
-
-Create React App will add decorator support when the specification advances to a stable stage.
-
 ## Integrating with a Node Backend
 
 Check out [this tutorial](https://www.fullstackreact.com/articles/using-create-react-app-with-a-server/) for instructions on integrating an app with a Node backend running on another port, and using `fetch()` to access it. You can find the companion GitHub repository [here](https://github.com/fullstackreact/food-lookup-demo).

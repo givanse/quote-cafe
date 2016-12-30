@@ -13,7 +13,7 @@ class Quote extends Component {
   render() {
     return (
       <article className='quote'>
-        <img className='fleft' src={this.props.imgSrc}/>
+        <img className='fleft' src={this.props.imgSrc} alt='quote author'/>
         <p className='quote_text fleft'>
           {this.props.text}
         </p>

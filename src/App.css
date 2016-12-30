@@ -26,11 +26,13 @@ html, body, #root {
 
 .quote img {
   margin: 10px;
+  max-width: 180px; /*-10 -10*/
 }
 
 .quote_text {
-  line-height: 6rem;
+  line-height: 1.7rem;
   -webkit-margin-after: 0;
+  max-width: 400px;
 }
 
 .quote_author {

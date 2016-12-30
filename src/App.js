@@ -6,7 +6,12 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Quote/>
+        <Quote
+          imgSrc='img/feynman.jpg'
+          author='Cyril DeGrasse Tyson'
+          text='Never stop testing, and your advertising will never stop improving.'
+          year='1849'
+        />
 
         <footer className="App-footer">
           <h1>quote cafe</h1>
