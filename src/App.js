@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 import Quote from './quote.js';
 import './App.css';
+import 'whatwg-fetch';
+
+const BE_URL = 'http://localhost:3001';
 
 class App extends Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       quote: {
         imgSrc: 'http://placehold.it/200x200',
@@ -14,6 +18,10 @@ class App extends Component {
         year: '1984'
       }
     };
+    this.setQueryString([0, 0, 0, 0]); // TODO: clean up
+  }
+ 
+  componentDidMount() {
   }
 
   renderQuote() {
@@ -27,19 +35,29 @@ class App extends Component {
     );
   }
 
+  generateRandomQuote() {
+    return [1, 1, 1, 1];
+  }
+
   getNewQuote() {
-    let quote = {
-      imgSrc: 'img/feynman.jpg',
-      author: 'Cyril DeGrasse Tyson',
-      text: 'Never stop testing, and your advertising will never stop improving.',
-      year: '1849'
-    };
-    return quote;
+    const quoteIds = this.generateRandomQuote() 
+
+    return fetch(BE_URL + '/v1/quote')
+    .then(response => {
+      if (response.status >= 200 && response.status < 300) {
+        this.setQueryString(quoteIds);
+        return response.json();
+      }  else {
+        var error = new Error(response.statusText);
+        error.response = response;
+        throw error;
+      }
+    });
   }
 
   loadNewQuote() {
-    let quote = this.getNewQuote();
-    this.setState({quote: quote});
+    this.getNewQuote()
+    .then(quote => this.setState({quote: quote}));
   }
 
   render() {
@@ -57,6 +75,20 @@ class App extends Component {
       </div>
     );
   }
+
+  setQueryString(quoteIds) {
+    const qs = this.buildQueryString(quoteIds);
+    if (window.location.search === qs) { //TODO: re-think
+      return;
+    }
+    //window.location.search = qs;
+    window.location.assign('/#'+qs);
+  }
+
+  buildQueryString(quoteIds) {
+    return '?q=' + quoteIds.join('+'); 
+  }
+
 }
 
 export default App;

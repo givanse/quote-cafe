@@ -4,14 +4,17 @@
   "private": true,
   "homepage": "http://quote.cafe/",
   "devDependencies": {
+    "express": "5.0.0-alpha.2",
     "react-scripts": "0.8.4"
   },
   "dependencies": {
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "whatwg-fetch": "^2.0.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "server": "node ./src/server.js",
     "build": "react-scripts build",
     "ci-build": "CI=true npm run build",
     "test": "react-scripts test --env=jsdom --coverage",
