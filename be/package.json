@@ -1,0 +1,19 @@
+{
+  "name": "api.quote.cafe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/givanse/quote-cafe.git"
+  },
+  "author": "@givanse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/givanse/quote-cafe/issues"
+  },
+  "homepage": "https://github.com/givanse/quote-cafe#readme"
+}
