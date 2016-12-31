@@ -18,6 +18,10 @@ html, body, #root {
   color: white;
 }
 
+.loading {
+  height: 100%;
+}
+
 .quote {
   min-width: 320px;
   max-width: 600px;

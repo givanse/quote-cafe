@@ -16,6 +16,10 @@ export default class App extends Component {
   }
  
   renderQuote() {
+    if (!this.state.quote) {
+      return <div className='loading'>Loading...</div>;
+    }
+
     return (
       <Quote
         imgSrc={this.state.quote.imgSrc}
@@ -33,10 +37,6 @@ export default class App extends Component {
   }
 
   render() {
-    if (!this.state.quote) {
-      return <div className='loading'>Loading...</div>;
-    }
-
     return (
       <div className='App'>
         {this.renderQuote()}
